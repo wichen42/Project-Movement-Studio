@@ -1,6 +1,6 @@
 import logo_gold from "../assets/LogoGold.png";
 import logo_black from "../assets/LogoBlack.png";
-import { AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import { useEffect, useState } from "react";
 
@@ -20,7 +20,12 @@ const Header = () => {
         };
     }, []);
 
-    const showHamburger = windowWidth <= 975;
+    const toggleMobileMenu = () => {
+        setMobileMenuOpen(!mobileMenuOpen);
+        console.log("click")
+    };
+
+    const showHamburger = windowWidth <= 1010;
 
     return (
         <div className="header">
@@ -35,12 +40,28 @@ const Header = () => {
                     <span>Contact Us</span>
                 </div>
             </div>
-            {!showHamburger && <div className="header-right">Become a Member</div>}
+            {!showHamburger && 
+                <div className="header-right ">
+                    Become a Member
+                </div>}
             {showHamburger && 
                 <IconContext.Provider value={{className: "header-hamburger"}}>
-                    <div><AiOutlineMenu /></div>
+                    <div onClick={toggleMobileMenu}><AiOutlineMenu /></div>
                 </IconContext.Provider>
             }
+            <div id="mobile-menu" className={`mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
+                <IconContext.Provider value={{className: "mobile-close"}}>
+                    <div onClick={toggleMobileMenu}>
+                        <AiOutlineClose />
+                    </div>
+                </IconContext.Provider>
+                <div>
+                    <span>Home</span>
+                    <span>Programs</span>
+                    <span>Testimonials</span>
+                    <span>Contact Us</span>
+                </div>
+            </div>
       </div>
     );
 };

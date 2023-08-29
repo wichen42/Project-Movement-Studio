@@ -73,7 +73,7 @@ $font_roboto: 'Roboto', sans-serif;
 $gold: rgb(212 175 55);
 
 // SCREEN SIZES
-$mobile: 975px;
+$mobile: 1010px;
 
 // HEADER
 .header {
@@ -130,5 +130,48 @@ $mobile: 975px;
         font-size: 2.5rem;
         color: $gold;
         cursor: pointer;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: left 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        gap: 10rem;
+    }
+
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        background-color: black;
+        transition: right 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        height: 100%;
+
+        .mobile-close {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-top: .25rem;
+            cursor: pointer;
+            width: 100%;
+            padding-left: 14rem;
+            color: white;
+            margin-bottom: 4rem;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            align-items: center;
+            span {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    .mobile-menu.active {
+        right: 0; 
     }
 }
