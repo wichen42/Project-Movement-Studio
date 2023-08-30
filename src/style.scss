@@ -216,6 +216,7 @@ $component_padding: 2rem 8rem 2rem 8rem;
                 padding-left: 22.5rem;
             }
         }
+
         .about-desc {
             display: flex;
             width: 100%;
@@ -233,6 +234,11 @@ $component_padding: 2rem 8rem 2rem 8rem;
             display: flex;
             align-items: center;
             gap: 2rem;
+            font-family: $font_dm_sans;
+
+            div {
+                font-weight: 500;
+            }
 
             span {
                 cursor: pointer;
