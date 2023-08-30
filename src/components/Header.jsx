@@ -3,6 +3,7 @@ import logo_black from "../assets/LogoBlack.png";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import { useEffect, useState } from "react";
+import Button from "./Button";
 
 const Header = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -41,9 +42,8 @@ const Header = () => {
                 </div>
             </div>
             {!showHamburger && 
-                <div className="header-right ">
-                    Become a Member
-                </div>}
+                <Button text={"Become a Member"}/>
+            }
             {showHamburger && 
                 <IconContext.Provider value={{className: "header-hamburger"}}>
                     <div onClick={toggleMobileMenu}><AiOutlineMenu /></div>
