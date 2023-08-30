@@ -16,6 +16,8 @@ html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockq
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     text-size-adjust: none;
+    background-color: black;
+    color: white;
 }
 
 footer, header, nav, section, main{
@@ -78,15 +80,52 @@ $mobile: 1010px;
 // LAYOUT
 $component_padding: 2rem 8rem 2rem 8rem;
 
-// BUTTON
-    .button {
-        background-color: $gold;
-        color: black;
-        padding: 1rem 1.5rem 1rem 1.5rem;
-        border-radius: .5rem;
-        cursor: pointer;
-        width: fit-content;
+// BUTTON COMPONENT
+.button {
+    background-color: $gold;
+    color: black;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    width: fit-content;
+}
+
+// PROGRAM COMPONENT
+.program {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 1rem;
+    width: 30rem;
+    padding: 2rem;
+    
+    .icon {
+        size: 2px;
     }
+
+    .icon-container {
+        border: 2px solid white;
+        padding: 1rem;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+    }
+    
+    .program-title {
+        font-weight: 600;
+        font-size: 2rem;
+        border: none;
+        font-family: $font_dm_sans;
+        margin-bottom: 1rem;
+        
+    }
+    
+    span {
+        max-width: 20rem;
+        font-weight: 300;
+        font-family: $font_dm_sans;
+    }
+}
 
 // HEADER
 .header {
@@ -97,9 +136,7 @@ $component_padding: 2rem 8rem 2rem 8rem;
     height: 100%;
     font-family: $font_dm_sans;
     font-weight: 600;
-    background-color: black;
-    color: white;
-    padding: 2rem 8rem 2rem 8rem;
+    padding: $component_padding;
 
     .header-left {
         display: flex;
@@ -155,11 +192,9 @@ $component_padding: 2rem 8rem 2rem 8rem;
         top: 0;
         right: -100%;
         width: 250px;
-        background-color: black;
         transition: right 0.3s ease-in-out;
         display: flex;
         flex-direction: column;
-        color: white;
         height: 100%;
 
         .mobile-close {
@@ -195,9 +230,8 @@ $component_padding: 2rem 8rem 2rem 8rem;
     display: flex;
     align-items: center;
     width: 100%;
-    background-color: black;
-    color: white;
     padding: $component_padding;
+    padding-bottom: 8rem;
 
     .about-tagline-container {
         display: flex;
@@ -253,4 +287,25 @@ $component_padding: 2rem 8rem 2rem 8rem;
     .about-image {
 
     }
+}
+
+// PROGRAMS
+
+.programs {
+    display: flex;
+    flex-direction: column;
+    padding: $component_padding;
+
+    #programs-title {
+        font-family: $font_bebas;
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 5rem;
+    }
+
+    .program-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
 }
