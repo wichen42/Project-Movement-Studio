@@ -272,6 +272,7 @@ $component_padding: 2rem 8rem 2rem 8rem;
     width: 100%;
     padding: $component_padding;
     padding-bottom: 8rem;
+    padding-top: 10rem;
 
     .about-tagline-container {
         display: flex;
@@ -344,7 +345,7 @@ $component_padding: 2rem 8rem 2rem 8rem;
     display: flex;
     flex-direction: column;
     padding: $component_padding;
-    padding-bottom: 8rem;
+    padding-bottom: 10rem;
 
     #programs-title {
         font-family: $font_bebas;
@@ -420,4 +421,73 @@ $component_padding: 2rem 8rem 2rem 8rem;
             font-weight: 800;
         }
     }
+}
+
+// TESTIMONIALS
+.testimonials {
+    padding: $component_padding;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 8rem;
+
+    span {
+        font-weight: 700;
+        font-family: $font_dm_sans;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .testimonial-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+
+        .testimonial {
+            border: 2px solid white;
+            border-radius: 1rem;
+            padding: 2rem;
+            font-family: $font_dm_sans;
+            height: 22rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+    
+            .testimonial-text {
+                max-width: 25rem;
+                margin-bottom: 1rem;
+                font-weight: 500;
+            }
+    
+            .testimonial-user {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+    
+                .user-info {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+    
+                    .user-name {
+                        font-weight: 600;
+                        font-size: 1.25rem;
+                        margin-bottom: .5rem;
+                    }
+    
+                    .testimonial-date {
+                        font-size: .8rem;
+                    }
+                }
+    
+                img {
+                    width: 5rem;
+                    border-radius: 50%;
+                    border: 2px solid white;
+                }
+            }
+        }
+    }
+
 }
