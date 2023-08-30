@@ -122,7 +122,7 @@ $component_padding: 2rem 8rem 2rem 8rem;
     
     .program-title {
         font-weight: 600;
-        font-size: 2rem;
+        font-size: 1.5rem;
         border: none;
         font-family: $font_dm_sans;
         margin-bottom: 1rem;
@@ -357,7 +357,7 @@ $component_padding: 2rem 8rem 2rem 8rem;
 
     #programs-title {
         
-        font-family: $font_bebas;
+        font-family: $font_montserrat;
         font-size: 3rem;
         font-weight: 700;
         margin-bottom: 5rem;
@@ -398,7 +398,7 @@ $component_padding: 2rem 8rem 2rem 8rem;
         flex-direction: column;
 
         .credential-headline {
-            font-family: $font_dm_sans;
+            font-family: $font_montserrat;
             font-size: 2rem;
             font-weight: 900;
             margin-bottom: 3rem;
@@ -450,7 +450,7 @@ $component_padding: 2rem 8rem 2rem 8rem;
 
     span {
         font-weight: 700;
-        font-family: $font_dm_sans;
+        font-family: $font_montserrat;
         font-size: 2rem;
         margin-bottom: 2rem;
     }
@@ -521,5 +521,69 @@ $component_padding: 2rem 8rem 2rem 8rem;
             }
         }
     }
+}
 
+// CONTACT
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    padding: $component_padding;
+
+    .contact-header {
+        display: flex;
+        flex-direction: column;
+
+        .contact-tag {
+            font-family: $font_montserrat;
+            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+
+            .tag-left {
+                color: $gold
+            }
+        }
+
+        .contact-text {
+            font-family: $font_dm_sans;
+            font-size: 1.15rem;
+            margin-bottom: .5rem;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        max-width: 45rem;
+        height: 100%;
+        gap: 1rem;
+        margin-top: 3rem;
+        
+        input, select {
+            border: none;
+            height: 3rem;
+            border-radius: .5rem;
+
+            &::placeholder {
+                font-family: $font_montserrat;
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+        }
+
+        button {
+            max-width: 30%;
+            height: 3rem;
+            border-radius: .5rem;
+            cursor: pointer;
+            background-color: $gold;
+            font-family: $font_dm_sans;
+            font-weight: 500;
+            font-size: 1rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1rem;
+        }
+    }
 }
