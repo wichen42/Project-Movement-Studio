@@ -440,16 +440,32 @@ $component_padding: 2rem 8rem 2rem 8rem;
     }
 
     .testimonial-container {
-        display: flex;
-        justify-content: space-between;
+        @media (max-width: 1694px) and (min-width: 1310px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: 1310px) and (min-width: $mobile) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: $mobile) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
 
         .testimonial {
+            @media (max-width: 1694px) {
+            }
+
             border: 2px solid white;
             border-radius: 1rem;
             padding: 2rem;
             font-family: $font_dm_sans;
-            height: 22rem;
+            height: 25rem;
+            width: 25rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
