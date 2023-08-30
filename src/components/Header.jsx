@@ -8,6 +8,7 @@ import Button from "./Button";
 const Header = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
@@ -21,6 +22,25 @@ const Header = () => {
         };
     }, []);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const offset = window.scrollY;
+            if (offset > 50) { 
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    
+
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
         console.log("click")
@@ -29,10 +49,10 @@ const Header = () => {
     const showHamburger = windowWidth <= 1010;
 
     return (
-        <div className="header">
+        <div className={`header ${scrolled ? 'header-scrolled' : ''}`}>
             <div className="header-left">
                 <div className="header-logo">
-                    <img src={logo_gold} alt="logo_gold" />
+                    <img src={scrolled ? logo_black : logo_gold} alt="header_logo" />
                 </div>
                 <div className="header-links">
                     <span>Home</span>
@@ -56,10 +76,10 @@ const Header = () => {
                     </div>
                 </IconContext.Provider>
                 <div>
-                    <span>Home</span>
-                    <span>Programs</span>
-                    <span>Testimonials</span>
-                    <span>Contact Us</span>
+                    <span className="mobile-span">Home</span>
+                    <span className="mobile-span">Programs</span>
+                    <span className="mobile-span">Testimonials</span>
+                    <span className="mobile-span">Contact Us</span>
                 </div>
             </div>
       </div>

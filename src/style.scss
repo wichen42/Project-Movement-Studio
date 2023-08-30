@@ -145,12 +145,16 @@ $component_padding: 2rem 8rem 2rem 8rem;
     font-family: $font_dm_sans;
     font-weight: 600;
     padding: $component_padding;
+    position: fixed;
+    height: fit-content;
 
     .header-left {
         display: flex;
         align-items: center;
         font-size: 1.15rem;
         gap: 3rem;
+        height: auto;
+        width: auto;
 
         .header-logo {
             img {
@@ -221,7 +225,7 @@ $component_padding: 2rem 8rem 2rem 8rem;
             flex-direction: column;
             gap: 4rem;
             align-items: center;
-            span {
+            .mobile-span {
                 font-size: 2rem;
             }
         }
@@ -229,6 +233,34 @@ $component_padding: 2rem 8rem 2rem 8rem;
 
     .mobile-menu.active {
         right: 0; 
+    }
+
+    &.header-scrolled {
+        background-color: white;
+
+        .header-left {
+            color: black;
+            background-color: white;
+
+            .header-logo {
+                img {
+                    background-color: white;
+                    display: block;
+                }
+            }
+
+            .header-links {
+                background-color: white;
+                span {
+                    color: black;
+                    background-color: white;
+
+                    &:hover {
+                        color: gold;
+                    }
+                }
+            }
+        }
     }
 }
 
