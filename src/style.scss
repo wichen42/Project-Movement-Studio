@@ -88,6 +88,13 @@ $component_padding: 2rem 8rem 2rem 8rem;
     border-radius: .5rem;
     cursor: pointer;
     width: fit-content;
+    font-family: $font_dm_sans;
+    font-weight: 500;
+}
+
+// GOLD TEXT
+#gold {
+    color: $gold;
 }
 
 // PROGRAM COMPONENT
@@ -295,6 +302,7 @@ $component_padding: 2rem 8rem 2rem 8rem;
     display: flex;
     flex-direction: column;
     padding: $component_padding;
+    padding-bottom: 8rem;
 
     #programs-title {
         font-family: $font_bebas;
@@ -308,4 +316,54 @@ $component_padding: 2rem 8rem 2rem 8rem;
         justify-content: space-between;
     }
 
+}
+
+// CREDENTIALS
+
+.credentials {
+    display: flex;
+    padding: $component_padding;
+    gap: 5rem;
+    padding-bottom: 8rem;
+
+    .credential-details {
+        display: flex;
+        flex-direction: column;
+
+        .credential-headline {
+            font-family: $font_dm_sans;
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 5rem;
+        }
+
+        .credential-text {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+
+            #credential-title {
+                font-family: $font_dm_sans;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-bottom: 2rem;
+            }
+
+            span {
+                font-size: 1rem;
+                font-weight: 600;
+                font-family: $font_dm_sans;
+            }
+
+            #credential-desc {
+                margin-bottom: 2rem;
+                margin-top: 2rem;
+                font-weight: 400;
+            }
+        }
+
+        .credential-button {
+            font-weight: 800;
+        }
+    }
 }
