@@ -105,7 +105,8 @@ $component_padding: 2rem 8rem 2rem 8rem;
     align-items: center;
     border: 2px solid white;
     border-radius: 1rem;
-    width: 30rem;
+    width: 23rem;
+    height: 23rem;
     padding: 2rem;
     
     .icon {
@@ -348,12 +349,14 @@ $component_padding: 2rem 8rem 2rem 8rem;
     @media (max-width: $mobile) {
         align-items: center;
     }
+    
     display: flex;
     flex-direction: column;
     padding: $component_padding;
     padding-bottom: 10rem;
 
     #programs-title {
+        
         font-family: $font_bebas;
         font-size: 3rem;
         font-weight: 700;
@@ -361,14 +364,17 @@ $component_padding: 2rem 8rem 2rem 8rem;
     }
 
     .program-container {
-        @media (max-width: $mobile) {
-            flex-direction: column;
-            gap: 2rem;
+        @media (max-width: 1694px) and (min-width: $mobile) {
+            grid-template-columns: repeat(2, 1fr);
         }
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @media (max-width: $mobile) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
     }
 
 }
@@ -431,6 +437,10 @@ $component_padding: 2rem 8rem 2rem 8rem;
 
 // TESTIMONIALS
 .testimonials {
+    @media (max-width: $mobile) {
+        align-items: center;
+    }
+
     padding: $component_padding;
     display: flex;
     flex-direction: column;
