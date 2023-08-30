@@ -11,7 +11,11 @@ const Contact = () => {
             <span className='contact-text'>Get started on your fitness journey! Drop us a line using the form below or reach us at </span>
             <span className='contact-text'>projectmovementstudio@gmail.com</span>
         </div>
-        <form action="">
+        <form
+        target="_blank"
+        method="POST"
+        action="https://formsubmit.co/projectmovementstudio@gmail.com"
+        >
             <input type="text" placeholder='NAME' />
             <input type="text" placeholder='EMAIL' />
             <input type="text" placeholder='PHONE NUMBER' />

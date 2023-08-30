@@ -62,7 +62,9 @@ const Header = () => {
                 </div>
             </div>
             {!showHamburger && 
-                <Button text={"Become a Member"}/>
+                <div className="reservation">
+                    <a href="https://projectmovementstudio.square.site/" target="_blank">BOOK NOW</a>
+                </div>
             }
             {showHamburger && 
                 <IconContext.Provider value={{className: "header-hamburger"}}>
