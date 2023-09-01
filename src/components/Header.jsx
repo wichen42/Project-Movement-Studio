@@ -3,13 +3,15 @@ import logo_black from "../assets/LogoBlack.png";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import { useEffect, useState } from "react";
-import Button from "./Button";
 
 const Header = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
-    const [scrollPos, setScrollPos] = useState(null);
+    const [headerScrolled, setHeaderScrolled] = useState(false);
+    const [homeScrolled, setHomeScrolled] = useState(false);
+    const [programsScrolled, setProgramsScrolled] = useState(false);
+    const [testimonialsScrolled, setTestimonialsScrolled] = useState(false);
+    const [contactScrolled, setContactScrolled] = useState(false);
 
     // hamburger menu when mobile width
     useEffect(() => {
@@ -29,10 +31,58 @@ const Header = () => {
         const handleScroll = () => {
             const offset = window.scrollY;
             if (offset > 50) { 
-                setScrolled(true);
+                setHeaderScrolled(true);
             } else {
-                setScrolled(false);
-            }
+                setHeaderScrolled(false);
+            };
+
+            const sectionPos = (sectionId) => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    let marginTop = parseInt(getComputedStyle(section).marginTop, 10);
+                    return section.offsetTop - marginTop;
+                };
+
+            };
+
+            const homePos = 0;
+            const programsPos = sectionPos('programs-section');
+            const testimonialsPos = sectionPos('testimonials-section');
+            const contactPos = 2758;
+
+            console.log(offset)
+
+            if (offset === homePos) {
+                setProgramsScrolled(false);
+                setTestimonialsScrolled(false);
+                setContactScrolled(false);
+                setHomeScrolled(true);
+            };
+
+            if (offset > 0 && offset < programsPos) {
+                setHomeScrolled(false);
+                setTestimonialsScrolled(false);
+                setContactScrolled(false);
+                setProgramsScrolled(true);
+            } else if (offset > programsPos && (offset > 2129 && offset < testimonialsPos)) {
+                setHomeScrolled(false);
+                setProgramsScrolled(false);
+                setContactScrolled(false);
+                setTestimonialsScrolled(true);
+
+            } else if (offset > testimonialsPos && offset < contactPos) {
+                setHomeScrolled(false);
+                setProgramsScrolled(false);
+                setContactScrolled(false);
+                setTestimonialsScrolled(true);
+            };
+
+            if (offset === contactPos) {
+                setHomeScrolled(false);
+                setProgramsScrolled(false);
+                setTestimonialsScrolled(false);
+                setContactScrolled(true);
+            };
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -56,24 +106,40 @@ const Header = () => {
         };
     };
 
+
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
-        console.log("click")
     };
 
     const showHamburger = windowWidth <= 1010;
 
     return (
-        <div className={`header ${scrolled ? 'header-scrolled' : ''}`}>
+        <div className={`header ${headerScrolled ? 'header-scrolled' : ''}`}>
             <div className="header-left">
                 <div className="header-logo">
-                    <img src={scrolled ? logo_black : logo_gold} alt="header_logo" />
+                    <img src={headerScrolled ? logo_black : logo_gold} alt="header_logo" />
                 </div>
                 <div className="header-links">
-                    <span onClick={handleHome}>Home</span>
-                    <span onClick={() => handleScroll('programs-section')}>Programs</span>
-                    <span onClick={() => handleScroll('testimonials-section')}>Testimonials</span>
-                    <span onClick={() => handleScroll('contact-section')}>Contact Us</span>
+                    <span 
+                        onClick={handleHome}
+                        className={`section ${homeScrolled ? 'scrolled' : ''}`}
+                        >Home
+                    </span>
+                    <span 
+                        onClick={() => handleScroll('programs-section')}
+                        className={`section ${programsScrolled ? 'scrolled' : ''}`}
+                        >Programs
+                    </span>
+                    <span 
+                        onClick={() => handleScroll('testimonials-section')}
+                        className={`section ${testimonialsScrolled? 'scrolled' : ''}`}
+                        >Testimonials
+                    </span>
+                    <span 
+                        onClick={() => handleScroll('contact-section')}
+                        className={`section ${contactScrolled ? 'scrolled' : ''}`}
+                        >Contact Us
+                    </span>
                 </div>
             </div>
             {!showHamburger && 

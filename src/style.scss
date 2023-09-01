@@ -172,12 +172,17 @@ $component_padding: 2rem 8rem 2rem 8rem;
             gap: 1.5rem;
             cursor: pointer;
             
-            span {
-                transition: .5s color ease-in;
+            .section {
+                transition: .25s color ease-in;
                 &:hover {
                     color: $gold;
                 }
+
+                &.section.scrolled {
+                    color: $gold;
+                }
             }
+
         }
     }
 
@@ -233,10 +238,15 @@ $component_padding: 2rem 8rem 2rem 8rem;
             flex-direction: column;
             gap: 4rem;
             align-items: center;
-            
+
             .mobile-span {
                 font-size: 2rem;
                 cursor: pointer;
+                transition: .5, color, ease-in;
+
+                &:hover {
+                    color: $gold;
+                }
             }
         }
     }
