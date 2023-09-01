@@ -9,7 +9,9 @@ const Header = () => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [scrollPos, setScrollPos] = useState(null);
 
+    // hamburger menu when mobile width
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
@@ -22,6 +24,7 @@ const Header = () => {
         };
     }, []);
 
+    // Change header when scrolled
     useEffect(() => {
         const handleScroll = () => {
             const offset = window.scrollY;
@@ -39,7 +42,19 @@ const Header = () => {
         };
     }, []);
 
-    
+    // Scroll to sections
+    const handleHome = () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+
+    const handleScroll = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            let marginTop = parseInt(getComputedStyle(section).marginTop, 10);
+            let scrollPos = section.offsetTop - marginTop;
+            window.scrollTo({top: scrollPos, behavior: 'smooth'});
+        };
+    };
 
     const toggleMobileMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
@@ -55,7 +70,7 @@ const Header = () => {
                     <img src={scrolled ? logo_black : logo_gold} alt="header_logo" />
                 </div>
                 <div className="header-links">
-                    <span>Home</span>
+                    <span onClick={handleHome}>Home</span>
                     <span>Programs</span>
                     <span>Testimonials</span>
                     <span>Contact Us</span>

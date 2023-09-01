@@ -4,7 +4,7 @@ import { IconContext } from 'react-icons';
 
 const Programs = () => {
   return (
-    <div className='programs'>
+    <div className='programs' id='programs-section'>
         <span id='programs-title'>MORE THAN JUST A GYM</span>
         <div className="program-container">
             <Program icon={

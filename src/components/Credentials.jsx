@@ -4,7 +4,7 @@ import Button from "./Button";
 
 const Credentials = () => {
   return (
-    <div className="credentials">
+    <div className="credentials" id="credentials-section">
         <img src={credentials_img} alt="" />
         <div className="credential-details">
             <div className="credential-headline">

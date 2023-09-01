@@ -6,7 +6,7 @@ import donald from "../assets/donald.jpg"
 
 const Testimonials = () => {
   return (
-    <div className="testimonials">
+    <div className="testimonials" id="testimonials-section">
         <span>TESTIMONIALS</span>
         <div className="testimonial-container">
             <Testimonial 
