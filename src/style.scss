@@ -233,8 +233,10 @@ $component_padding: 2rem 8rem 2rem 8rem;
             flex-direction: column;
             gap: 4rem;
             align-items: center;
+            
             .mobile-span {
                 font-size: 2rem;
+                cursor: pointer;
             }
         }
     }

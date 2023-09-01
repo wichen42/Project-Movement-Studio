@@ -51,7 +51,7 @@ const Header = () => {
         const section = document.getElementById(sectionId);
         if (section) {
             let marginTop = parseInt(getComputedStyle(section).marginTop, 10);
-            let scrollPos = section.offsetTop - marginTop;
+            let scrollPos = section.offsetTop - marginTop - 230;
             window.scrollTo({top: scrollPos, behavior: 'smooth'});
         };
     };
@@ -71,9 +71,9 @@ const Header = () => {
                 </div>
                 <div className="header-links">
                     <span onClick={handleHome}>Home</span>
-                    <span>Programs</span>
-                    <span>Testimonials</span>
-                    <span>Contact Us</span>
+                    <span onClick={() => handleScroll('programs-section')}>Programs</span>
+                    <span onClick={() => handleScroll('testimonials-section')}>Testimonials</span>
+                    <span onClick={() => handleScroll('contact-section')}>Contact Us</span>
                 </div>
             </div>
             {!showHamburger && 
@@ -93,10 +93,10 @@ const Header = () => {
                     </div>
                 </IconContext.Provider>
                 <div>
-                    <span className="mobile-span">Home</span>
-                    <span className="mobile-span">Programs</span>
-                    <span className="mobile-span">Testimonials</span>
-                    <span className="mobile-span">Contact Us</span>
+                    <span className="mobile-span" onClick={handleHome}>Home</span>
+                    <span className="mobile-span" onClick={() => handleScroll('programs-section')}>Programs</span>
+                    <span className="mobile-span" onClick={() => handleScroll('testimonials-section')}>Testimonials</span>
+                    <span className="mobile-span" onClick={() => handleScroll('contact-section')}>Contact Us</span>
                 </div>
             </div>
       </div>
