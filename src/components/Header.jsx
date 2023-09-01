@@ -50,8 +50,6 @@ const Header = () => {
             const testimonialsPos = sectionPos('testimonials-section');
             const contactPos = 2758;
 
-            console.log(offset)
-
             if (offset === homePos) {
                 setProgramsScrolled(false);
                 setTestimonialsScrolled(false);
@@ -70,19 +68,21 @@ const Header = () => {
                 setContactScrolled(false);
                 setTestimonialsScrolled(true);
 
-            } else if (offset > testimonialsPos && offset < contactPos) {
+            } else if (offset > testimonialsPos && offset < 4695) {
                 setHomeScrolled(false);
                 setProgramsScrolled(false);
                 setContactScrolled(false);
                 setTestimonialsScrolled(true);
             };
 
-            if (offset === contactPos) {
+            if (offset > 4595 || offset === contactPos) {
                 setHomeScrolled(false);
                 setProgramsScrolled(false);
                 setTestimonialsScrolled(false);
                 setContactScrolled(true);
             };
+
+            console.log(offset)
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -159,10 +159,26 @@ const Header = () => {
                     </div>
                 </IconContext.Provider>
                 <div>
-                    <span className="mobile-span" onClick={handleHome}>Home</span>
-                    <span className="mobile-span" onClick={() => handleScroll('programs-section')}>Programs</span>
-                    <span className="mobile-span" onClick={() => handleScroll('testimonials-section')}>Testimonials</span>
-                    <span className="mobile-span" onClick={() => handleScroll('contact-section')}>Contact Us</span>
+                    <span 
+                        className={`mobile-span ${homeScrolled ? 'scrolled' : ''}`}
+                        onClick={handleHome}
+                        >Home
+                    </span>
+                    <span 
+                        className={`mobile-span ${programsScrolled ? 'scrolled' : ''}`} 
+                        onClick={() => handleScroll('programs-section')}
+                        >Programs
+                    </span>
+                    <span 
+                        className={`mobile-span ${testimonialsScrolled ? 'scrolled' : ''}`} 
+                        onClick={() => handleScroll('testimonials-section')}
+                        >Testimonials
+                    </span>
+                    <span 
+                        className={`mobile-span ${contactScrolled ? 'scrolled' : ''}`} 
+                        onClick={() => handleScroll('contact-section')}
+                        >Contact Us
+                    </span>
                 </div>
             </div>
       </div>

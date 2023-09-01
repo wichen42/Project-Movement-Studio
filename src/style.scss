@@ -247,6 +247,10 @@ $component_padding: 2rem 8rem 2rem 8rem;
                 &:hover {
                     color: $gold;
                 }
+
+                &.mobile-span.scrolled {
+                    color: $gold;
+                }
             }
         }
     }
