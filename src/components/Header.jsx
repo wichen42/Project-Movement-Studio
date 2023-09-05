@@ -144,7 +144,7 @@ const Header = () => {
             </div>
             {!showHamburger && 
                 <div className="reservation">
-                    <a href="https://projectmovementstudio.square.site/" target="_blank">BOOK NOW</a>
+                    <a href="https://www.vagaro.com/projectmovementstudio/services" target="_blank">BOOK NOW</a>
                 </div>
             }
             {showHamburger && 

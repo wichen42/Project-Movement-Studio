@@ -24,7 +24,7 @@ const Credentials = () => {
                 <span>CPR/AED Certified</span>
                 <span id="credential-desc">Kevin loves his job as a personal trainer and coach. He believes that personal trainers and coaches are the frontline of helping individuals take their first steps in changing their lives. Kevin is extremely experienced with transformations, helping individuals stay consistent and accountable for their fitness goals. He is willing to take on any client who loves to be challenged and wants to be the best version of themselves.</span>
             </div>
-            <Button className="credential-button" text={"Join Now"}/>
+            <Button className="credential-button" text={"Book Now"}/>
         </div>
 
     </div>

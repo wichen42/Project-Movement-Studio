@@ -2,7 +2,7 @@ import React from 'react'
 
 const Button = ({text}) => {
   return (
-    <div className='button'>{text}</div>
+    <a className='button' href='https://www.vagaro.com/projectmovementstudio/services' target='_blank'>{text}</a>
   );
 };
 
