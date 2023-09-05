@@ -1,7 +1,8 @@
-import React from 'react'
+import VagaroWidget from "./VagaroWidget";
 
 const Contact = () => {
-  return (
+
+    return (
     <div className='contact' id='contact-section'>
         <div className="contact-header">
             <div className='contact-tag'>
@@ -26,8 +27,9 @@ const Contact = () => {
             </select>
             <button>SUBMIT</button>
         </form>
+        <VagaroWidget />
     </div>
-  );
+    );
 };
 
 export default Contact;
