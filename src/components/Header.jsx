@@ -75,14 +75,13 @@ const Header = () => {
                 setTestimonialsScrolled(true);
             };
 
-            if (offset > 4595 || offset === contactPos) {
+            if (offset > 4595 || offset >= contactPos) {
                 setHomeScrolled(false);
                 setProgramsScrolled(false);
                 setTestimonialsScrolled(false);
                 setContactScrolled(true);
             };
 
-            console.log(offset)
         };
 
         window.addEventListener('scroll', handleScroll);
