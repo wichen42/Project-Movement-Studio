@@ -6,6 +6,7 @@ const Contact = () => {
     const [email, setEmail] = useState('');
     const [number, setNumber] = useState('');
     const [type, setType] = useState('default');
+    const [showNotification, setShowNotification] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -13,6 +14,13 @@ const Contact = () => {
         setEmail('');
         setNumber('');
         setType('default');
+
+        // display submit text for 5 secs
+        setShowNotification(true);
+
+        setTimeout(() => {
+            setShowNotification(false);
+        }, 5000);
     }
 
     return (
@@ -51,7 +59,10 @@ const Contact = () => {
                         <option value="personal">Personal Training</option>
                         <option value="group">Group Training</option>
                     </select>
-                    <button>SUBMIT</button>
+                    <div>
+                        <button>SUBMIT</button>
+                        {showNotification && <span className="notification-text">Form Submitted Successfully!</span>}
+                    </div>
                 </form>
             </div>
         </div>
