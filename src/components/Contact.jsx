@@ -5,14 +5,14 @@ const Contact = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [number, setNumber] = useState('');
-    const [type, setType] = useState('');
+    const [type, setType] = useState('default');
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setName('');
         setEmail('');
         setNumber('');
-        setType('');
+        setType('default');
     }
 
     return (
@@ -36,25 +36,24 @@ const Contact = () => {
                     placeholder='NAME' 
                     value={name} 
                     onChange={(e) => setName(e.target.value)}/>
-                    <input type="text" 
+                    <input type="email" 
                     placeholder='EMAIL' 
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}/>
-                    <input type="text" 
+                    <input type="tel" 
                     placeholder='PHONE NUMBER' 
                     value={number}
                     onChange={(e) => setNumber(e.target.value)}/>
                     <select 
                     onChange={(e) => setType(e.target.value)}
                     value={type}>
-                        <option value="default"  selected disabled>Which Program are you interested in?</option>
+                        <option value="default" disabled>Which Program are you interested in?</option>
                         <option value="personal">Personal Training</option>
                         <option value="group">Group Training</option>
                     </select>
                     <button>SUBMIT</button>
                 </form>
             </div>
-
         </div>
     );
 };
