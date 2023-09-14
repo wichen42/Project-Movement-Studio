@@ -709,14 +709,14 @@ $component_padding: 2rem 8rem 2rem 8rem;
         display: flex;
         height: 25rem;
         gap: 4rem;
-
+        
         .newsletter-headshot {
 
             img {
                 width: 10rem;
             }
         }
-
+        
         .newsletter-details {
             display: flex;
             flex-direction: column;
@@ -724,16 +724,18 @@ $component_padding: 2rem 8rem 2rem 8rem;
 
             #newsletter-title {
                 font-size: 3rem;
+                max-width: 38rem;
                 font-family: $font_montserrat;
                 font-weight: 600;
+                border: 1px solid green;
             }
-
+            
             #newsletter-text {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                max-width: 38rem;
+                max-width: 31rem;
                 font-family: $font_dm_sans;
                 font-size: 1.25rem;
                 color: $light-gray;
@@ -753,7 +755,7 @@ $component_padding: 2rem 8rem 2rem 8rem;
                         border: none;
                         height: 3rem;
                         border-radius: .5rem;
-                        width: 20rem;
+                        width: 22rem;
                         
             
                         &::placeholder {
@@ -774,8 +776,8 @@ $component_padding: 2rem 8rem 2rem 8rem;
                         border-radius: .5rem;
                         background-color: rgb(88,54,193);
                         color: white;
-                        padding-left: 1.5rem;
-                        padding-right: 1.5rem;
+                        padding-left: 1.75rem;
+                        padding-right: 1.75rem;
                         cursor: pointer;
                     }
                 }
@@ -805,7 +807,8 @@ $component_padding: 2rem 8rem 2rem 8rem;
         align-items: center;
         justify-content: space-around;
         gap: 5rem;
-        width: 56rem;   
+        width: 45rem;   
+        border: 1px solid red;
              
         .socials-link {
             display: flex;
