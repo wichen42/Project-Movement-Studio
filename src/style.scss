@@ -741,6 +741,7 @@ $component_padding: 2rem 8rem 2rem 8rem;
             .newsletter-form {
                 display: flex;
                 flex-direction: column;
+                justify-content: center;
                 gap: .5rem;
                 
                 form {
@@ -756,17 +757,43 @@ $component_padding: 2rem 8rem 2rem 8rem;
             
                         &::placeholder {
                             font-family: $font_montserrat;
-                            font-size: 1rem;
+                            font-size: 1.15rem;
                             font-weight: 600;
                             color: gray;
+                            padding: 1rem;
                             text-indent: 1rem;
                         }
                     }
+
+                    button {
+                        background: none;
+                        border: none;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        border-radius: .5rem;
+                        background-color: rgb(88,54,193);
+                        color: white;
+                        padding-left: 1.5rem;
+                        padding-right: 1.5rem;
+                        cursor: pointer;
+                    }
                 }
 
-                span {
+                div {
                     font-size: .85rem;
                     color: $light-gray;
+                    font-family: $font_roboto;
+
+                    #unsub {
+                        font-family: $font_roboto;
+                        color: $light-gray;
+                        cursor: pointer;
+
+                        &:hover {
+                            cursor: pointer;
+                            text-decoration: underline;
+                        }
+                    }
                 }
             }
         }

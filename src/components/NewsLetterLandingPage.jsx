@@ -16,7 +16,7 @@ const NewsLetterLandingPage = () => {
                 <input type="text" placeholder='Email Address' />
                 <button type="submit">Subscribe</button>
               </form>
-              <span>We respect your privacy. Unsubscribe at any time.</span>
+              <div>We respect your privacy. <span id="unsub">Unsubscribe</span> at any time.</div>
             </div>
           </div>
       </div>
