@@ -1,22 +1,17 @@
 import "./style.scss";
-import Header from "./components/Header";
-import About from "./components/About";
-import Programs from "./components/Programs";
-import Credentials from "./components/Credentials";
-import Testimonials from "./components/Testimonials";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Home from "./assets/Home";
+import  { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NewsLetterLandingPage from "./components/NewsLetterLandingPage";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <About />
-      <Programs />
-      <Credentials />
-      <Testimonials />
-      <Contact />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home/>}/>
+          <Route path="newsletter" element={<NewsLetterLandingPage />} />
+        </Routes>
+      </BrowserRouter>    
     </div>
   );
 }
