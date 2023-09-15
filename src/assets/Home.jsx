@@ -5,8 +5,13 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Programs from "../components/Programs";
 import Testimonials from "../components/Testimonials";
+import { ImNewspaper } from "react-icons/im";
 
 const Home = () => {
+  const handleNewsButton = () => {
+    console.log("clicked");
+  };
+
   return (
     <div className="home-container">
         <Header />
@@ -16,6 +21,9 @@ const Home = () => {
         <Testimonials />
         <Contact />
         <Footer />
+        <div className="newsletter-button">
+          <ImNewspaper />
+        </div>
     </div>
   );
 };

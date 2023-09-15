@@ -74,6 +74,7 @@ $font_roboto: 'Roboto', sans-serif;
 // COLORS
 $gold: rgb(212 175 55);
 $light-gray: rgb(197, 197, 197);
+$dark-gray: rgb(131, 131, 131);
 
 // SCREEN SIZES
 $mobile: 1010px;
@@ -141,6 +142,7 @@ $component_padding: 2rem 8rem 2rem 8rem;
 .App {
 
     .home-container {
+        position: relative;
         // HEADER
         .header {
             display: flex;
@@ -818,6 +820,23 @@ $component_padding: 2rem 8rem 2rem 8rem;
                         color: white;
                     }
                 }
+            }
+        }
+
+        // NEWSLETTER BUTTON
+        .newsletter-button {
+            position: fixed;
+            background-color: $dark-gray;
+            border-radius: .5rem;
+            color: black;
+            padding: 1rem;
+            right: .5rem;
+            bottom: .5rem;
+            cursor: pointer;
+            transition: .25s background-color ease-in;
+
+            &:hover {
+                background-color: white;
             }
         }
     }
