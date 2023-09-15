@@ -1,6 +1,5 @@
 import React from 'react'
 import Button from './Button';
-import HomePageGraphic from "../assets/HomePageGraphic.png";
 import studio from "../assets/studio.png";
 
 const About = () => {
