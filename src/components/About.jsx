@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from './Button';
 import HomePageGraphic from "../assets/HomePageGraphic.png";
+import studio from "../assets/studio.png";
 
 const About = () => {
     const scrollToBottom = () => {
@@ -27,7 +28,7 @@ const About = () => {
                 </div>
             </div>
             <div className="about-image">
-                <img src={HomePageGraphic} alt="about-image" />
+                <img src={studio} alt="about-image" />
             </div>
         </div>
     );

@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import About from "../components/About";
-import Contact from "../components/Contact";
-import Credentials from "../components/Credentials";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
-import Programs from "../components/Programs";
-import Testimonials from "../components/Testimonials";
+import About from "./About";
+import Contact from "./Contact";
+import Credentials from "./Credentials";
+import Footer from "./Footer";
+import Header from "./Header";
+import Programs from "./Programs";
+import Testimonials from "./Testimonials";
 import { ImNewspaper } from "react-icons/im";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { IconContext } from 'react-icons';

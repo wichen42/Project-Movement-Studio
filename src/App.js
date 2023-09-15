@@ -1,5 +1,5 @@
 import "./style.scss";
-import Home from "./assets/Home";
+import Home from "../src/components/Home";
 import  { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NewsLetterLandingPage from "./components/NewsLetterLandingPage";
 
