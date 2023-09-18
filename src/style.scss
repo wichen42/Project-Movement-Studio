@@ -568,7 +568,8 @@ $component_padding: 2rem 8rem 2rem 8rem;
         .contact-container {
             display: flex;
             align-items: center;
-
+            gap: 2rem;
+            margin-bottom: 5rem;
             .contact {
                 display: flex;
                 flex-direction: column;
@@ -660,7 +661,11 @@ $component_padding: 2rem 8rem 2rem 8rem;
                 }
             }
 
-
+            img {
+                height: 35rem;
+                filter: grayscale(40%);
+                border-radius: .5rem;
+            }
         }
 
         // FOOTER 

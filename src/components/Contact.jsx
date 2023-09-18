@@ -1,4 +1,5 @@
 import { useState } from "react";
+import studio from "../assets/studio_wide.jpg";
 
 const Contact = () => {
 
@@ -65,6 +66,7 @@ const Contact = () => {
                     </div>
                 </form>
             </div>
+            <img src={studio} alt="" />
         </div>
     );
 };
