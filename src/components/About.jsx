@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from './Button';
 import studio from "../assets/studio.png";
+import profile from "../assets/profile_dark.jpg";
 
 const About = () => {
     const scrollToBottom = () => {
@@ -27,7 +28,7 @@ const About = () => {
                 </div>
             </div>
             <div className="about-image">
-                <img src={studio} alt="about-image" />
+                <img src={profile} alt="about-image" />
             </div>
         </div>
     );

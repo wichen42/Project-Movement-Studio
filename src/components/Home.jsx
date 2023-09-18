@@ -65,7 +65,7 @@ const Home = () => {
 
             <div className="banner-text">
               <span>SUBSCRIBE FOR WEEKLY NEWSLETTERS</span>
-              <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+              <span>COMING SOON</span>
             </div>
             <div className="banner-form">
               <input type="text" placeholder="Email Address" />

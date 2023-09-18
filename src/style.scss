@@ -155,6 +155,7 @@ $component_padding: 2rem 8rem 2rem 8rem;
             padding: $component_padding;
             position: fixed;
             height: fit-content;
+            z-index: 100;
 
             .header-left {
                 display: flex;
@@ -371,7 +372,8 @@ $component_padding: 2rem 8rem 2rem 8rem;
                     display: none;
                 }
 
-                filter: grayscale(50%);
+                filter: grayscale(20%);
+                box-shadow: 0 0 8px 8px black inset;
             }
         }
 
@@ -420,10 +422,16 @@ $component_padding: 2rem 8rem 2rem 8rem;
                 }
             }
 
+            img {
+                height: fit-content;
+                border-radius: 50%;                
+            }
+
             display: flex;
             padding: $component_padding;
             gap: 5rem;
             padding-bottom: 8rem;
+            align-items: center;
 
             .credential-details {
                 display: flex;

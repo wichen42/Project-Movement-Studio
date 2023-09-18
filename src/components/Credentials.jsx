@@ -1,11 +1,12 @@
 
 import credentials_img from "../assets/BenefitsPageGraphic.png";
+import headshot from "../assets/profile.jpg";
 import Button from "./Button";
 
 const Credentials = () => {
   return (
     <div className="credentials" id="credentials-section">
-        <img src={credentials_img} alt="" />
+        <img src={headshot} alt="" />
         <div className="credential-details">
             <div className="credential-headline">
                 <span>START YOUR FITNESS JOURNEY WITH </span>
