@@ -1,6 +1,5 @@
 import React from 'react'
 import Button from './Button';
-import studio from "../assets/studio.png";
 import profile from "../assets/profile_dark.jpg";
 
 const About = () => {

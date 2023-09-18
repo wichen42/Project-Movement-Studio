@@ -683,154 +683,6 @@ $component_padding: 2rem 8rem 2rem 8rem;
             }
         }
 
-        // NEWSLETTER LANDING PAGE
-        .newsletter-container {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
-            height: 100vh;
-            
-            .newsletter-main {
-                @media (max-width: $mobile) {
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    height: 35rem;
-                }
-                display: flex;
-                height: 25rem;
-                gap: 4rem;
-                
-                .newsletter-headshot {
-
-                    img {
-                        width: 10rem;
-                    }
-                }
-                
-                .newsletter-details {
-                    @media (max-width: $mobile) {
-                        align-items: center;
-                    }
-                    display: flex;
-                    flex-direction: column;
-                    gap: 2rem;
-
-                    #newsletter-title {
-                        font-size: 3rem;
-                        font-family: $font_montserrat;
-                        font-weight: 600;
-                        width: auto;
-                    }
-                    
-                    #newsletter-text {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                        max-width: 31rem;
-                        font-family: $font_dm_sans;
-                        font-size: 1.25rem;
-                        color: $light-gray;
-                    }
-
-                    .newsletter-form {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        gap: .5rem;
-                        
-                        form {
-                            display: flex;
-                            gap: 1rem;
-
-                            input {
-                                border: none;
-                                height: 3rem;
-                                border-radius: .5rem;
-                                width: 22rem;
-                                
-                    
-                                &::placeholder {
-                                    font-family: $font_montserrat;
-                                    font-size: 1.15rem;
-                                    font-weight: 600;
-                                    color: gray;
-                                    padding: 1rem;
-                                    text-indent: 1rem;
-                                }
-                            }
-
-                            button {
-                                background: none;
-                                border: none;
-                                font-size: 1rem;
-                                font-weight: 600;
-                                border-radius: .5rem;
-                                background-color: rgb(88,54,193);
-                                color: white;
-                                padding-left: 1.75rem;
-                                padding-right: 1.75rem;
-                                cursor: pointer;
-                            }
-                        }
-
-                        div {
-                            font-size: .85rem;
-                            color: $light-gray;
-                            font-family: $font_roboto;
-
-                            #unsub {
-                                font-family: $font_roboto;
-                                color: $light-gray;
-                                cursor: pointer;
-
-                                &:hover {
-                                    cursor: pointer;
-                                    text-decoration: underline;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            .social-links {
-                @media (max-width: $mobile) {
-                    flex-direction: column;
-                    gap: 2rem;
-                }
-                display: flex;
-                align-items: center;
-                justify-content: space-around;
-                gap: 5rem;
-                width: 45rem;   
-                    
-                .socials-link {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 18rem;
-                    gap: .5rem;
-                    font-family: $font_dm_sans;
-                    font-weight: 600;
-                    background-color: gray;
-                    padding: 1.5rem;
-                    border-radius: .5rem;
-                    cursor: pointer;
-                    
-                    .social-icon {
-                        background-color: gray;
-                    }
-
-                    span {
-                        background-color: gray;
-                        color: white;
-                    }
-                }
-            }
-        }
 
         // NEWSLETTER BUTTON
         .newsletter-button {
@@ -940,6 +792,155 @@ $component_padding: 2rem 8rem 2rem 8rem;
                         }
                     }
 
+                }
+            }
+        }
+    }
+
+    // NEWSLETTER LANDING PAGE
+    .newsletter-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        
+        .newsletter-main {
+            @media (max-width: $mobile) {
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 35rem;
+            }
+            display: flex;
+            height: 25rem;
+            gap: 4rem;
+            
+            .newsletter-headshot {
+
+                img {
+                    width: 10rem;
+                }
+            }
+            
+            .newsletter-details {
+                @media (max-width: $mobile) {
+                    align-items: center;
+                }
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+
+                #newsletter-title {
+                    font-size: 3rem;
+                    font-family: $font_montserrat;
+                    font-weight: 600;
+                    width: auto;
+                }
+                
+                #newsletter-text {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    max-width: 31rem;
+                    font-family: $font_dm_sans;
+                    font-size: 1.25rem;
+                    color: $light-gray;
+                }
+
+                .newsletter-form {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: .5rem;
+                    
+                    form {
+                        display: flex;
+                        gap: 1rem;
+
+                        input {
+                            border: none;
+                            height: 3rem;
+                            border-radius: .5rem;
+                            width: 22rem;
+                            
+                
+                            &::placeholder {
+                                font-family: $font_montserrat;
+                                font-size: 1.15rem;
+                                font-weight: 600;
+                                color: gray;
+                                padding: 1rem;
+                                text-indent: 1rem;
+                            }
+                        }
+
+                        button {
+                            background: none;
+                            border: none;
+                            font-size: 1rem;
+                            font-weight: 600;
+                            border-radius: .5rem;
+                            background-color: rgb(88,54,193);
+                            color: white;
+                            padding-left: 1.75rem;
+                            padding-right: 1.75rem;
+                            cursor: pointer;
+                        }
+                    }
+
+                    div {
+                        font-size: .85rem;
+                        color: $light-gray;
+                        font-family: $font_roboto;
+
+                        #unsub {
+                            font-family: $font_roboto;
+                            color: $light-gray;
+                            cursor: pointer;
+
+                            &:hover {
+                                cursor: pointer;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .social-links {
+            @media (max-width: $mobile) {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 5rem;
+            width: 45rem;   
+                
+            .socials-link {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 18rem;
+                gap: .5rem;
+                font-family: $font_dm_sans;
+                font-weight: 600;
+                background-color: gray;
+                padding: 1.5rem;
+                border-radius: .5rem;
+                cursor: pointer;
+                
+                .social-icon {
+                    background-color: gray;
+                }
+
+                span {
+                    background-color: gray;
+                    color: white;
                 }
             }
         }

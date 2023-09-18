@@ -1,12 +1,11 @@
-import temp_headshot from "../assets/LogoGold.png"
+import temp_headshot from "../assets/LogoGold.png";
 import { BsInstagram, BsArrowUpRightSquare } from "react-icons/bs";
 import { IconContext } from 'react-icons';
 
-
 const NewsLetterLandingPage = () => {
+
   return (
     <div className='newsletter-container'>
-      {/* Newsletter Details */}
       <div className="newsletter-main">
           <div className="newsletter-headshot">
             <img src={temp_headshot} alt="headshot" />
@@ -25,7 +24,6 @@ const NewsLetterLandingPage = () => {
           </div>
       </div>
 
-      {/* Socials */}
       <div className="social-links">
         <div className="socials-link">
           <IconContext.Provider value={{style: {size: "20px"}}}>
