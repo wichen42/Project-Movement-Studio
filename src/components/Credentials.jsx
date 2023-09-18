@@ -1,5 +1,4 @@
 
-import credentials_img from "../assets/BenefitsPageGraphic.png";
 import headshot from "../assets/profile.jpg";
 import Button from "./Button";
 
