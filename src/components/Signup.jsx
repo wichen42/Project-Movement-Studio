@@ -30,13 +30,15 @@ const Signup = () => {
                         name="first_name" 
                         placeholder="First Name" 
                         value={firstName}
-                        onChange={(e) => {setFirstName(e.target.value)}}/>
+                        onChange={(e) => {setFirstName(e.target.value)}}
+                        required />
                         <input 
                         type="text" 
                         name="last_name" 
                         placeholder="Last Name" 
                         value={lastName}
-                        onChange={(e) => {setLastName(e.target.value)}}/>
+                        onChange={(e) => {setLastName(e.target.value)}}
+                        required />
                     </div>
                     <input 
                     type="email" 
@@ -44,7 +46,7 @@ const Signup = () => {
                     placeholder='Email Address' 
                     value={email}
                     onChange={(e) => {setEmail(e.target.value)}}
-                    />
+                    required />
                     <div className="password-container">
                         <input 
                         type={showPassword ? `text` :  `password`} 
@@ -52,6 +54,7 @@ const Signup = () => {
                         placeholder='Password' 
                         value={password}
                         onChange={(e) => {setPassword(e.target.value)}}
+                        required
                         />
                         <IconContext.Provider value={{color: "rgb(51,51,51)"}}>
                             <div className="password-toggle" onClick={() => setShowPassword(!showPassword)}>
