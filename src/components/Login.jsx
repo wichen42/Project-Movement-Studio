@@ -43,7 +43,6 @@ const Login = () => {
                 </form>
                 <div className="signup-text">
                     <span>Don't Have An Account? </span>
-                    {/* TODO: change navigate to signup */}
                     <span className="signup-link" onClick={() => navigate('/signup')}>Sign Up</span>
                 </div>
             </div>
