@@ -48,7 +48,7 @@ class Api::V1::UsersController < ApplicationController
     #     id = params[:id]
     #     @user = User.find_by(id: id)
     #     if id == current_user.id
-    #         render json: { body: ["Please email the adming to have your account removed"] }, status: 200
+    #         render json: { body: ["Please email the admin to have your account removed"] }, status: 200
     #     elsif current_user_admin?
     #         render json: { body: ["You do not have permission to delete this user"] }, status: 401
     #         return

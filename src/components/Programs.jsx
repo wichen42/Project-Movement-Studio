@@ -1,5 +1,6 @@
 import Program from './Program';
-import { FaUserAlt, FaUserFriends, FaUsers} from "react-icons/fa";
+import { FaUserAlt, FaUsers} from "react-icons/fa";
+import { AiOutlineLaptop } from "react-icons/ai";
 import { IconContext } from 'react-icons';
 
 const Programs = () => {
@@ -10,17 +11,17 @@ const Programs = () => {
             <Program icon={
                 <IconContext.Provider value={{size: "25px"}}>
                     <div>
+                        <AiOutlineLaptop />
+                    </div>
+                </IconContext.Provider>
+            } title={"Online Training"} text={"Customized programming and nutritional guidance for motivated individuals. With 24/7 access to our coaches and weekly check-ins all done on an app; we offer a premium coaching experience."}/>
+            <Program icon={
+                <IconContext.Provider value={{size: "25px"}}>
+                    <div>
                         <FaUserAlt />
                     </div>
                 </IconContext.Provider>
             } title={"Personal Training"} text={"One on one individualized training focused on helping our clients achieve their fitness goals. With undivided attention to our clients we help program, teach, and coach our clients so they leave with more than just a workout."}/>
-            <Program icon={
-                <IconContext.Provider value={{size: "25px"}}>
-                    <div>
-                        <FaUserFriends />
-                    </div>
-                </IconContext.Provider>
-            } title={"Semi-Private Training"} text={"2 is always better than 1. Workout with a partner with the same fitness goals as you so you do not have to feel like you're in this alone, we got you!"}/>
             <Program icon={
                 <IconContext.Provider value={{size: "25px"}}>
                     <div>
