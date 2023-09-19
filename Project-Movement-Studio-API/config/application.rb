@@ -6,17 +6,18 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module ProjectMovemenStudioApi
+module ProjectMovementStudioApi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.api_only = true
 
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore, 
       key: '_Project-Movement-Studio-API_session'
       # will need to change the next line to secure in production
-      same_site: :lax,
-      secire: Rails.env.production?
+      same_site= :lax,
+      secure= Rails.env.production?
 
     # Configuration for the application, engines, and railties goes here.
     #
@@ -29,6 +30,5 @@ module ProjectMovemenStudioApi
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
-    config.api_only = true
   end
 end
