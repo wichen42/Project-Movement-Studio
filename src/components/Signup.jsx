@@ -3,6 +3,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { IconContext } from 'react-icons'
 import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
+import sanitizeNumber from "../utils/sanitizeNumber";
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -14,16 +15,7 @@ const Signup = () => {
     const [phoneNumber, setPhoneNumber] = useState("");
 
     function handleSanitizeNumber(e) {
-        // remove non-digit characters
-        const value = e.target.value.replace(/\D/g, '');
-        let formattedNumber = '';
-
-        for (let i = 0; i < value.length; i++) {
-            if (i === 3 || i === 6) {
-                formattedNumber += '-';
-            };
-            formattedNumber += value[i];
-        };
+        const formattedNumber = sanitizeNumber(e.target.value);
         setPhoneNumber(formattedNumber);
     };
 
