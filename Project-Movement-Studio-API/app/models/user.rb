@@ -27,22 +27,22 @@ class User < ApplicationRecord
   end
 
   def reset_session_token!
-    self.session_token = generate_unique_session_token
-    self.save!
+    self.update!(session_token: generate_unique_session_token)
     self.session_token
   end
 
   private
 
   def generate_unique_session_token
-
+    token = SecureRandom.urlsafe_base64(16)
+    while User.exists?(session_token: token)
+      token = SecureRandom.urlsafe_base64(16)
+    end
+    token
   end
 
   def ensure_session_token
     self.session_token ||= generate_unique_session_token
   end
-
-
-
 
 end
