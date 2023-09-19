@@ -1,8 +1,8 @@
 class Api::V1::UsersController < ApplicationController
-    wrap_parameters include: User.attribute_names + [:username, :password, :firstName. :lastName, :phoneNumber]
+    wrap_parameters include: User.attribute_names + [:username, :password, :firstName, :lastName, :phoneNumber]
 
     def index
-        unless !current_user_admin? 
+        unless logged_in? && !current_user_admin? 
             @users = User.all
             render :index
         else
@@ -12,7 +12,7 @@ class Api::V1::UsersController < ApplicationController
 
     def show
         id = params[:id]
-        unless id == current_user || current_user_admin?
+        unless id == current_user.id || current_user_admin?
             render json: { errors: ["You do not have permission to view this user"] }, status: 401
             return
         end
@@ -36,7 +36,7 @@ class Api::V1::UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            login(@user)
+            login!(@user)
             render :show
         else
             render json: { errors: @user.errors.full_messages }, status: 422
@@ -65,6 +65,6 @@ class Api::V1::UsersController < ApplicationController
         params.require(:user).permit(:email, :first_name, :last_name, :password, :phone_number, :username)
     end
 
-    def requirementsd
+
 
 end

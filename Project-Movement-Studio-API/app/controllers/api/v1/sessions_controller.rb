@@ -3,10 +3,10 @@ class Api::V1::SessionsController < ApplicationController
         
     def show
         if !current_user
-            render json: {}
+            render json: { user: nil }
         else
             @user = current_user
-            render 'api/users/show'
+            render 'api/v1/users/show'
         end
     end
 
