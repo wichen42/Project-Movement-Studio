@@ -75,6 +75,7 @@ $font_roboto: 'Roboto', sans-serif;
 $gold: rgb(212 175 55);
 $light-gray: rgb(197, 197, 197);
 $dark-gray: rgb(131, 131, 131);
+$charcoal: rgb(51,51,51);
 
 // SCREEN SIZES
 $mobile: 1010px;
@@ -947,6 +948,76 @@ $component_padding: 2rem 8rem 2rem 8rem;
                     background-color: gray;
                     color: white;
                 }
+            }
+        }
+    }
+
+    // LOGIN
+    .login-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 100vh;
+
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            height: 100%;
+            width: 100%;
+            gap: 1.5rem;
+
+            span {
+                background-color: white;
+                color: black;
+                font-weight: 600;
+                font-size: 2rem;
+                font-family: $font_bebas;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                background-color: white;
+                gap: .5rem;
+                width: 15rem;
+
+                input {
+                    border: none;
+                    border-bottom: solid 1px $light-gray;
+                    margin-bottom: .5rem;
+                    height: 2rem;
+                    padding: .5rem;
+
+                    &::placeholder {
+                        font-size: 1rem;
+                        font-family: $font_montserrat;
+                        font-weight: 500;
+                    }
+                }
+
+                button {
+                    border: none;
+                    height: 2.5rem;
+                    background-color: $charcoal;
+                    color: white;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    font-family: $font_roboto;
+                    margin-top: 1.5rem;
+                }
+            }
+        }
+
+        .login-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100rem;
+            img {
+                width: 30rem;
             }
         }
     }
