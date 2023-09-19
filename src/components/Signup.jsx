@@ -13,6 +13,20 @@ const Signup = () => {
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
 
+    function handleSanitizeNumber(e) {
+        // remove non-digit characters
+        const value = e.target.value.replace(/\D/g, '');
+        let formattedNumber = '';
+
+        for (let i = 0; i < value.length; i++) {
+            if (i === 3 || i === 6) {
+                formattedNumber += '-';
+            };
+            formattedNumber += value[i];
+        };
+        setPhoneNumber(formattedNumber);
+    };
+
     return (
         <div className='signup-container'>
             <div className="signup-form">
@@ -60,9 +74,11 @@ const Signup = () => {
                     type="tel" 
                     name="phone_number" 
                     id="phone"
-                    placeholder="Phone Number" 
+                    placeholder="Phone Number"
+                    onChange={(e) => {handleSanitizeNumber(e)}}
+                    value={phoneNumber}
                     required
-                    pattern="[0-9]{10}"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     />
                     <button>Sign Up</button>
                 </form>
