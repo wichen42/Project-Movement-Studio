@@ -11,7 +11,8 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def show
-        id = params[:id].to_i
+        
+        id = params[:id]
         @user = User.find_by(id: id)
         # unless id == current_user.id || current_user_admin?
         #     render json: { errors: ["You do not have permission to view this user"] }, status: 401
