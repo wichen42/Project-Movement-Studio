@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { Provider } from 'react-redux';
 import configureStore from './store';
+import { restoreSession } from './store/session';
 import { restoreCSRF } from './store/csrf';
 
 const store = configureStore()
@@ -22,8 +23,8 @@ const renderApplication = () => {
   );
 };
 
-if (sessionStorage.getItem("X-CSRF-Token") === null) {
-  restoreCSRF().then(renderApplication);
+if (sessionStorage.getItem("X-CSRF-Token") === null && sessionStorage.getItem("currentUser") !== null) {
+  store.dispatch(restoreSession()).then(renderApplication);
 } else {
   renderApplication();
 };
