@@ -2,7 +2,7 @@ class Api::V1::UsersController < ApplicationController
     wrap_parameters include: User.attribute_names + [:username, :password, :firstName, :lastName, :phoneNumber]
 
     def index
-        unless logged_in? && !current_user_admin? 
+        unless logged_in? && current_user_admin? 
             @users = User.all
             render :index
         else
@@ -11,11 +11,12 @@ class Api::V1::UsersController < ApplicationController
     end
 
     def show
-        id = params[:id]
-        unless id == current_user.id || current_user_admin?
-            render json: { errors: ["You do not have permission to view this user"] }, status: 401
-            return
-        end
+        id = params[:id].to_i
+        @user = User.find_by(id: id)
+        # unless id == current_user.id || current_user_admin?
+        #     render json: { errors: ["You do not have permission to view this user"] }, status: 401
+        #     return
+        # end
         render :show
     end
 
