@@ -2,7 +2,7 @@ class Api::V1::SessionsController < ApplicationController
 
         
     def show
-        debugger
+        
         if current_user
             @user = current_user
             render 'api/v1/users/show'
@@ -21,7 +21,7 @@ class Api::V1::SessionsController < ApplicationController
         @user = User.find_by_credentials(params[:user][:email], params[:user][:password])
         if !@user
             login!(@user)
-            render 'api/v1/users/show'
+            render '/api/v1/users/show'
         else 
             render json: { errors: ["Invalid email/password combination"] }, status: 401
         end
